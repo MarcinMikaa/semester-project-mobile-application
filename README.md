@@ -1,56 +1,78 @@
-# Welcome to your Expo app 👋
+# PetCare - MOB-029
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Mobilna aplikacja do prowadzenia dziennika opieki nad zwierzętami. Opiekun zapisuje zwierzęta i czynności opiekuńcze (karmienie, spacer, terning, czy wizyta u weterynarza), przegląda je, wyszukuje i filtruje oraz widzi, ile czynności wykonano dla zwierzęcia w danym tygodniu.
 
-## Get started
+- Karta biznesowa: [`business-requirements_29.md`](business-requirements_29.md)
+- Wymagania wspólne: [`requirements.md`](requirements.md)
+- Zasady pracy: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
-1. Install dependencies
+## Technologia i wersje
 
-   ```bash
-   npm install
-   ```
+Uzasadnienie wyboru: [`docs/technology-decision.md`](docs/technology-decision.md).
 
-2. Start the app
+|       Element       |                          Wersja                          |
+|---------------------|----------------------------------------------------------|
+| React Native        | 0.88.1                                                   |
+| Expo SDK            | 58                                                       |
+| React               | 19.3.0                                                   |
+| TypeScript          | ~6.0.3                                                   |
+| Nawigacja           | expo-router ~58.0.30                                     |
+| Node.js             | 22.22.2                                                  |
+| npm                 | 10.9.7                                                   |
+| Android Studio      | 2026.2.2                                                 |
+| Urządzenie testowe  | emulator Pixel 10 Pro, Android 16 (API 36), Expo Go      |
+| System deweloperski | Windows 11                                               |
 
-   ```bash
+
+## Wymagania środowiskowe
+
+- Git
+- Node.js w wersji z tabeli
+- Android Studio z zainstalowanymi:
+  - Android SDK Platform 36
+  - Android SDK Build-Tools
+  - Android Emulator
+  - Android SDK Platform-Tools
+  - utworzonym urządzeniem wirtualnym (AVD)
+
+
+## Instalacja
+
+git clone https://github.com/MarcinMikaa/semester-project-mobile-application.git
+cd semester-project-mobile-application
+npm ci
+
+
+## Uruchomienie
+
+1. Uruchom emulator Android Studio
+2. W katalogu projektu wpisz:
    npx expo start
-   ```
+   
+3. Naciśnij `a`. Expo CLI zainstaluje na emulatorze Expo Go zgodne z SDK 58 i otworzy aplikację.
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Testy
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Testy automatyczne nie zostały jeszcze dodane
 
-## Get a fresh project
+npx tsc --noEmit
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+## Zakres funkcji
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Zrealizowane:
+- [x] Szkielet aplikacji z ekranem startowym
 
-### Other setup steps
+Planowane (karta MOB-029):
+- [ ] Zwierzęta: tworzenie, lista, szczegóły, edycja (FR-02)
+- [ ] Czynności opiekuńcze: pełny CRUD z przypisaniem do zwierzęcia (FR-01, FR-03, FR-04)
+- [ ] Wyszukiwanie, filtrowanie, sortowanie (FR-05–FR-07)
+- [ ] Walidacja i komunikaty błędów (FR-08, FR-09)
+- [ ] Liczba czynności zwierzęcia w tygodniu (FR-10)
+- [ ] Trwałe przechowywanie danych (FR-11)
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
 
-## Learn more
+## Znane ograniczenia
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Aplikacja jest testowana na ten moment tylko na Androidzie.
