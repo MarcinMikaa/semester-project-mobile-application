@@ -22,7 +22,9 @@ Uzasadnienie wyboru: [`docs/technology-decision.md`](docs/technology-decision.md
 | Android Studio      | 2026.2.2                                                 |
 | Urządzenie testowe  | emulator Pixel 10 Pro, Android 16 (API 36), Expo Go      |
 | System deweloperski | Windows 11                                               |
-
+| Baza danych         | expo-sqlite ~58.0.18                                     |
+| Identyfikatory UUID | expo-crypto ~58.0.8                                      |
+| Wybór daty i godziny| @react-native-community/datetimepicker 9.2.1             |
 
 ## Wymagania środowiskowe
 
@@ -62,15 +64,16 @@ npx tsc --noEmit
 ## Zakres funkcji
 
 Zrealizowane:
-- [x] Szkielet aplikacji z ekranem startowym
+- [x] Szkielet aplikacji z nawigacją: zakładki Czynności i Zwierzęta (laboratorium 1 i 2)
+- [x] Zwierzęta: dodawanie, lista i edycja (FR-02)
+- [x] Czynności: dodawanie, lista i szczegóły z przypisaniem do zwierzęcia (FR-01 częściowo, FR-03, FR-04)
+- [x] Walidacja pól i komunikaty błędów (FR-08)
+- [x] Trwałe przechowywanie danych w SQLite (FR-11)
 
-Planowane (karta MOB-029):
-- [ ] Zwierzęta: tworzenie, lista, szczegóły, edycja (FR-02)
-- [ ] Czynności opiekuńcze: pełny CRUD z przypisaniem do zwierzęcia (FR-01, FR-03, FR-04)
-- [ ] Wyszukiwanie, filtrowanie, sortowanie (FR-05–FR-07)
-- [ ] Walidacja i komunikaty błędów (FR-08, FR-09)
+Planowane:
+- [ ] Edycja i usuwanie czynności, usuwanie zwierzęcia z blokadą (FR-01, BR-04)
+- [ ] Wyszukiwanie, filtrowanie i sortowanie (FR-05–FR-07)
 - [ ] Liczba czynności zwierzęcia w tygodniu (FR-10)
-- [ ] Trwałe przechowywanie danych (FR-11)
 
 
 ## Znane ograniczenia
