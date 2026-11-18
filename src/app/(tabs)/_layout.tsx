@@ -1,10 +1,11 @@
 import { Link, Tabs } from 'expo-router';
 import { SymbolView } from 'expo-symbols';
 import { StyleSheet } from 'react-native';
+import { colors, fontSize, spacing } from '../../constants/theme';
 
 export default function TabsLayout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{ tabBarActiveTintColor: colors.primary }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -39,9 +40,9 @@ export default function TabsLayout() {
 
 const styles = StyleSheet.create({
   headerLink: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    fontSize: 16,
-    color: '#1f6feb',
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    fontSize: fontSize.md,
+    color: colors.primary,
   },
 });
